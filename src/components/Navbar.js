@@ -16,7 +16,7 @@ const Navbar = () => {
                 <Link to='/'>Home</Link>
             </li>
             <li>
-                <Link to='/'>Detect Scam</Link>
+            <Link to='/detectscam'>Detect Scam</Link>
             </li>
             <li>
                 <Link to='/help'>Help & Support</Link>

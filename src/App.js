@@ -10,6 +10,7 @@ function App() {
       <Routes>
         <Route path='/' element={<Home />} />
         <Route path='/help' element={<HelpSupport />} />
+        <Route path='/detectscam' element={<DetectScam />} />
       </Routes>
 
     </div>
