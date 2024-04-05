@@ -13,7 +13,7 @@ const Home = () => {
             <h1 className='centered-title'>Unsure about a suspicious message?</h1>
             <p className='centered-description'>Let's check!</p>
             <div>
-                <Link to='/' className='btn'>CLICK HERE</Link>
+                <Link to='/detectscam' className='btn'>CLICK HERE</Link>
             </div>
         </div>
         
