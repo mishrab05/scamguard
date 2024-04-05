@@ -1,0 +1,60 @@
+
+
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap');
+
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+h1,a {
+  color: #5E2D91;
+  font-size: 2rem;
+}
+
+h4,p {
+  color: #000;
+}
+
+body {
+  margin: 0;
+  font-family: 'Outfit', 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  background: #fff;
+}
+ul {
+  list-style-type: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+.btn {
+  padding: 12px 32px;
+  font-size: 1.5rem;
+  text-transform: uppercase;
+  background: #5E2D91;
+  color: #fff;
+  border: 1px solid #5E2D91;
+  cursor: pointer;
+}
+
+.btn-light {
+  background: rgba(255,255,255, .2);
+}
+
+.btn:hover {
+  background: rgba(94,45,145, 0.7);
+}
