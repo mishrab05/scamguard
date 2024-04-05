@@ -3,6 +3,7 @@ import { Routes, Route } from 'react-router-dom';
 
 import Home from './routes/Home'
 import HelpSupport from './routes/HelpSupport';
+import DetectScam from './routes/Detectscam'
 
 function App() {
   return (
