@@ -45,7 +45,16 @@
     color: rgb(94, 45, 145, 0.8);
 }
 
+.logo {
+	display: flex;
+	align-items: center;
+}
 
+.logo img {
+	height: 90px;
+	width: auto;
+	margin-right: 1rem;
+}
 
 
 

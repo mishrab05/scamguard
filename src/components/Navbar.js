@@ -1,13 +1,17 @@
 import React from 'react'
 import {Link} from 'react-router-dom'
 import './NavbarStyles.css'
+import Image from '../assets/logo.jpeg'
 
 
 const Navbar = () => {
   return (
     <div>
         <nav class="navbar background">
-		<Link to='/'><h1>SCAM GUARD</h1></Link>
+		<div class='logo'>
+			<img src={Image}/>
+			<Link to='/'><h1>SCAM GUARD</h1></Link>
+		</div>
 			<ul class="nav-list">
 				<li>
 					<Link to='/'>Home</Link>
