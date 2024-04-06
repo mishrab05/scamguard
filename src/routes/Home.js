@@ -8,6 +8,13 @@ import Image from '../assets/seniors.jpeg'
 const Home = () => {
   return (
     <div>
+        <section style={{
+        backgroundImage: `url(${Image})`,
+        backgroundSize: 'contain',
+        backgroundRepeat: 'no-repeat',
+        backgroundAttachment: 'fixed',
+        backgroundPosition: 'center center',
+        }}>
         <Navbar/>
 
         <section class="content">
@@ -49,7 +56,7 @@ const Home = () => {
                 </div>
             </div>
         </div>
-
+      </section>
     </div>
   )
 }
