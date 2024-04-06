@@ -6,22 +6,38 @@
 /*homepage*/
 .hero {
   display: flex;
-  height: 100vh;
+  height: 150vh;
   background-color: white;
-  /*background-image: url('./assets/seniors.jpeg');*/
+  background-image: url('./assets/seniors.jpeg');
   background-size: cover;
   box-shadow: inset 0 0 0 2000px rgba(255, 255, 255, 0.5);
 }
 
-/*home page written content*/
 .content {
-  display: flex;
-  flex-direction: column;
-  max-width: 1200px;
-  margin: 0 auto;
-  justify-content: center;
-  align-items: center;
+	height: 200px;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+  margin-top: 6rem;
+  margin-bottom: 4rem;
   text-align: center;
+}
+
+.box-content {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	color: black;
+	max-width: 80%;
+	margin: auto;
+	height: 80%;
+}
+
+.firstHalf {
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
 }
 
 .centered-title {
@@ -41,6 +57,65 @@
 .btn {
   margin: 1rem .2rem;
 }
+
+/*homepage cards*/
+.card-container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-bottom: 5rem;
+}
+
+.info-card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  text-align: center;
+  background-color: rgb(136, 170, 185); /* white background */
+  padding: 20px;
+  border-radius: 40px; /* Rounded corners */
+  box-shadow: 0 2px 4px rgba(0,0,0,0.2); /* Soft shadow */
+  margin: 20px; /* Spacing between cards and other elements */
+  width: 400px; /* Adjust width of the card */
+  height: 200px /* Limits card size, increase if you want larger cards */
+}
+
+.card-content {
+  flex: 1; /* Fill the remaining space */
+  position: relative; /* This is necessary if you're using absolute positioning for children */
+  padding-bottom: 70px; 
+}
+
+.card-link-button {
+  background-color: #5E2D91; /* Default background color set to orange */
+  text-decoration: none;
+  padding: 10px 20px;
+  border-radius: 20px; /* Fully rounded edges for button */
+  position: absolute;
+  display: block;
+  border: 2px solid transparent; /* Transparent border to maintain the layout */
+  margin-top: 1rem;
+  margin-left: 7rem;
+}
+
+/*card text*/
+.card-heading {
+  color: #5E2D91;
+  line-height: 1.8;
+}
+
+.card-link {
+  color: white;
+	font-size: 18px;
+}
+
+.card-link:hover {
+	font-size: 18px;
+  text-decoration: underline;
+}
+/*end of card text*/
+/*end of homepage cards*/
+/*end of homepage*/
 
 
 
@@ -142,6 +217,7 @@ input[type="text"] {
   margin-right: 20px;
 }
 /*end of detect scam*/
+
 
 
 /*help and support*/
