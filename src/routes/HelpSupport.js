@@ -1,42 +1,115 @@
 import React from 'react'
 import '../App.css'; 
+import Navbar from '../components/Navbar'
+import {Link} from 'react-router-dom'
 
 const HelpSupport = () => {
   return (
-    <section class="section">
-				<div class="box-main">
-					<div class="secondHalf">
-						<h1 class="text-big" id="program">
-							Java Programming Language
-						</h1>
-						<p class="text-small">
-							When compared with C++, Java
-							codes are generally more
-							maintainable because Java does
-							not allow many things which may
-							lead to bad/inefficient
-							programming if used incorrectly.
-							For example, non-primitives are
-							always references in Java. So we
-							cannot pass large objects (like
-							we can do in C++) to functions,
-							we always pass references in
-							Java. One more example, since
-							there are no pointers, bad
-							memory access is also not
-							possible. When compared with
-							Python, Java kind of fits
-							between C++ and Python. The
-							programs are written in Java
-							typically run faster than
-							corresponding Python programs
-							and slower than C++. Like C++,
-							Java does static type checking,
-							but Python does not.
-						</p>
-					</div>
+    <div>
+		<Navbar/>
+
+		<section class="header">
+			<h1 class="text-header">I'VE BEEN SCAMMED</h1>
+			<p class="text-header">Steps to take after falling victim to a scam</p>	
+		</section>
+
+		<section class="section">
+			<div class="box-main">
+				<div class="firsthalf">
+					<h1 class="text-big" id="actfast">
+						ON THIS PAGE:
+					</h1>
+					<a href="#actfast" class="text-bullet">1. Act fast</a>
+					<a href="#gethelp" class="text-bullet">2. Get help</a>
+					<a href="#followup" class="text-bullet">3. Watch out for follow up scams</a>
+					<a href="#support" class="text-bullet">4. Get support</a>
 				</div>
-			</section>
+			</div>
+		</section>
+
+
+		<section class="section">
+			<div class="box-main">
+				<div class="firstHalf">
+					<h1 class="text-big" id="actfast">
+						1. Act fast
+					</h1>
+					<p class="text-small">
+						1. Contact your bank or card provider immediately to report the scam. Request your bank to stop any transactions.
+					</p>
+					<p class="text-small">
+						2. Change your passwords to any accounts which may be accessed (Bank).
+					</p>
+					<p class="text-small">
+						3. Contact your telecommunications provider for advice to block future phishing attempts.
+					</p>
+					<p class="text-small">
+						You can also register your phone number on the Do Not Call Register which prevents you from getting most unsolicited telemarketing calls. 
+					</p>
+					<Link to='https://www.donotcall.gov.au/'><a class='text-link'>Click here to register</a></Link>
+				</div>
+			</div>
+		</section>
+
+		<section class="section">
+			<div class="box-main">
+				<div class="secondHalf">
+					<h1 class="text-big" id="gethelp">
+						2. Get help
+					</h1>
+					<p class="text-small">
+						If you're not satisfied with the way your bank handled your case, make a complaint to the Australian Financial Complaints Authority.
+					</p>
+					<Link to='https://www.afca.org.au/make-a-complaint'><a class='text-link'>Click here to file complaint</a></Link>
+					<p class="text-small">How do i make a complaint?</p>
+					<Link to='https://www.youtube.com/watch?v=EK8PlurJZog&ab_channel=AustralianFinancialComplaintsAuthority'><a class='text-link'>Click here to watch video</a></Link>
+					<p class="text-bold">Consider contacting IDCARE</p>
+					<p class="text-small">IDCARE is a free service in Australia and New Zealand. Their excellent response and mitigation services have helped thousands of Australian and New Zealander individuals and companies lessen the harm caused by identity information breach and misuse.</p>
+					<p class="text-bold">Warn others and report</p>
+					<p class="text-small">You can help us warn others by reporting to Scamwatch</p>
+					<Link to='https://www.scamwatch.gov.au/report-a-scam'><a class='text-link'>Click here to report to Scamwatch</a></Link>
+				</div>
+			</div>
+		</section>
+
+		<section class="section">
+			<div class="box-main">
+				<div class="secondHalf">
+					<h1 class="text-big" id="followup">
+						3. Watch out for follow up scams
+					</h1>
+					<p class="text-small">Scammers frequently return for more money if they have already taken it from you.</p>
+					<p class="text-small">Regretfully, 1 in 3 scam victims have fallen victim to scams more than once.</p>
+				</div>
+			</div>
+		</section>
+
+		<section class="section">
+			<div class="box-main">
+				<div class="secondHalf">
+					<h1 class="text-big" id="support">
+						4. Get support
+					</h1>
+					<p class="text-small">
+						Anyone could be a victim of a scam which is a terrible experience. You might feel like it is your fault but IT IS NOT.
+					</p>
+					<p class="text-small">
+						If you need someone to talk to, don't be embarrassed to speak to family and friends.
+					</p>
+					<p class="text-small">
+						Alternatively, the following are available services you can contact to have a chat online or over the phone:
+					</p>
+					<p class="text-bold">Beyond Blue</p>
+					<p class="text-small">1300 22 4636 or online chat (24 hours a day, 7 days a week)</p>
+					<Link to='https://www.beyondblue.org.au/get-support/talk-to-a-counsellor/chat'><a class='text-link'>Click here for online support</a></Link>
+					<p class="text-bold">Lifeline</p>
+					<p class="text-small">13 11 14 or online crisis support chat (24 hours a day, 7 days a week)</p>
+					<Link to='https://www.lifeline.org.au/crisis-chat/'><a class='text-link'>Click here for online support</a></Link>
+				</div>
+			</div>
+		</section>
+
+	</div>
   )
 }
 
