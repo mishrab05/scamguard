@@ -1,25 +1,57 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 import '../App.css'; 
+import { Link } from 'react-router-dom';
 import Navbar from '../components/Navbar'
-import Footer from '../components/Footer'
 import Image from '../assets/seniors.jpeg'
+
 
 const Home = () => {
   return (
-    <section className='hero' style={{ backgroundImage: `url(${Image})`}}>
+    <div>
         <Navbar/>
-        <div className='content'>
-            <h1 className='centered-title'>Unsure about a suspicious message?</h1>
-            <p className='centered-description'>Let's check!</p>
-            <div>
-                <Link to='/detectscam' className='btn'>CLICK HERE</Link>
+
+        <section class="content">
+            <div class="box-content">
+                <div class="firstHalf">
+                    <h1 class="centered-title">
+                        Unsure about a suspicious message?
+                    </h1>
+                    <p class="centered-description">
+                        Let's check!
+                    </p>
+                    <div>
+                        <Link to='/detectscam' className='btn'>CLICK HERE</Link>
+                    </div>
+                </div>
+            </div>
+			  </section>
+
+        <div className="card-container">
+            <div className="info-card">
+                <div className="card-content">
+                    <h2 class='card-heading'>Is this a scam?</h2>
+                    <p>Warning signs to help you identify a scam</p>
+                    <Link to="/detectscam" className="card-link-button"><a class='card-link'>Read more</a></Link>
+                </div>
+              </div>
+              <div className="info-card">
+                <div className="card-content">
+                    <h2 class='card-heading'>Be scam aware!</h2>
+                    <p>Learn how to spot and identify scams</p>
+                    <Link to="/" className="card-link-button"><a class='card-link'>Read more</a></Link>
+                </div>
+            </div>
+            <div className="info-card">
+                <div className="card-content">
+                    <h2 class='card-heading'>I've been scammed!</h2>
+                    <p>Act straight away</p>
+                    <Link to="/helpsupport" className="card-link-button"><a class='card-link'>Read more</a></Link>
+                </div>
             </div>
         </div>
-        
 
-    </section>
-  );
+    </div>
+  )
 }
 
-export default Home;
+export default Home
