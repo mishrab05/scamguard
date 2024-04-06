@@ -38,10 +38,11 @@
 .nav-list li a {
 	text-decoration: none;
 	color: #5E2D91;
+    font-weight: 600;
 }
 
 .nav-list li a:hover {
-	color: #000;
+    color: rgb(94, 45, 145, 0.8);
 }
 
 

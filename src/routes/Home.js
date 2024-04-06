@@ -10,10 +10,10 @@ const Home = () => {
     <div>
         <section style={{
         backgroundImage: `url(${Image})`,
-        backgroundSize: 'contain',
+        backgroundSize: 'cover',
         backgroundRepeat: 'no-repeat',
         backgroundAttachment: 'fixed',
-        backgroundPosition: 'center center',
+        boxShadow: 'inset 0 0 0 2000px rgba(255, 255, 255, 0.4)',
         }}>
         <Navbar/>
 
