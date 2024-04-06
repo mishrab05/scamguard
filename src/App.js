@@ -3,17 +3,16 @@ import { Routes, Route } from 'react-router-dom';
 
 import Home from './routes/Home'
 import HelpSupport from './routes/HelpSupport';
-import DetectScam from './routes/Detectscam'
+import DetectScam from './routes/Detectscam';
 
 function App() {
   return (
     <div>
-      <Routes>
-        <Route path='/' element={<Home />} />
-        <Route path='/help' element={<HelpSupport />} />
-        <Route path='/detectscam' element={<DetectScam />} />
-      </Routes>
-
+        <Routes>
+          <Route path='/' element={<Home />} />
+          <Route path='/helpsupport' element={<HelpSupport />} />
+          <Route path='/detectscam' element={<DetectScam />} />
+        </Routes>
     </div>
   );
 }
