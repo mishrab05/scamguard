@@ -22,9 +22,9 @@ const Detectscam =()=>{
         backgroundRepeat: 'no-repeat',
         backgroundAttachment: 'fixed',
         backgroundBlendMode: 'darken',
+        boxShadow: 'inset 0 0 0 2000px rgba(255, 255, 255, 0.15)',
         }}>
         <Navbar/>
-
 
         <section class="search-tool">
             <div class="box-content">
@@ -54,9 +54,9 @@ const Detectscam =()=>{
         <section className="result-section">
             <div className="result-actions">
             <button className="homeButton" onClick={() => navigate('/')}>Home</button>
-              <button className="report-scam" onClick={() => navigate('/helpsupport')}>Report This</button>
-              <button className="learn-more" onClick={() => navigate('/helpsupport')}>Learn More</button>
-              <button className="nextStepsButton">Next Steps</button>
+                <button className="report-scam" onClick={() => navigate('/helpsupport')}>Report This</button>
+                <button className="learn-more" onClick={() => navigate('/helpsupport')}>Learn More</button>
+                <button className="nextStepsButton">Next Steps</button>
             </div>
         </section>
     
