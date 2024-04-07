@@ -197,7 +197,7 @@
   padding-top: 30px;
 }
 
-.report-scam,.learn-more,.homeButton,.nextStepsButton {
+.report-scam,.learn-more,.homeButton {
   padding: 12px 40px;
   font-size: 1rem; 
   border: none; 
@@ -211,7 +211,7 @@
   margin-bottom: 20px;
 }
 
-.report-scam:hover, .learn-more:hover, .homeButton:hover, .nextStepsButton:hover {
+.report-scam:hover, .learn-more:hover, .homeButton:hover {
   text-decoration: underline;
 }
 
