@@ -53,7 +53,7 @@ const Home = () => {
                 <div className="card-content">
                     <h2 class='card-heading'>Report Scam</h2>
                     <p>Warn others and report scam message</p>
-                    <Link to='https://www.scamwatch.gov.au/report-a-scam' className="card-link-button"><a class='card-link'>Learn More</a></Link>
+                    <Link to='https://www.scamwatch.gov.au/report-a-scam' target="_blank" className="card-link-button"><a class='card-link'>Learn More</a></Link>
                 </div>
             </div>
         </div>
