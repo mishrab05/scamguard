@@ -109,66 +109,57 @@
 /*end of homepage*/
 
 
-
-
-
-
-
-
-/* Detect Scam Css */
-.tracker-text {
-  font-size: 30px;
-  font-weight: 500;
-  color: #030006;
-  margin-bottom: auto;
-}
-
-
+/*detect scam*/
 .search-tool {
+	height: auto;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+  margin-top: 5rem;
+  margin-bottom: 5rem;
+  text-align: center;
+}
+
+.centered-text {
+  font-size: 28px;
+  font-weight: 500;
+  color: #fff;
+  line-height: 2;
+  /*margin-bottom: 2rem;*/
+}
+
+.search-box {
   display: flex;
-  flex-direction: column;
-  align-items: center; 
-  justify-content: center; 
-  height: 100vh; 
+  width: 100%;
+  max-width: 600px; /* Adjust as needed */
+  margin: 0 auto; /* Center the box horizontally */
+  margin-bottom: 1rem;
+  margin-top: 2rem;
 }
 
-.tracker-message {
-  margin: 20px 0; 
+.search-box input[type="text"] {
+  height: 150px;
+  width: 600px;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  font-size: 1.5rem;
+  text-align: center;
 }
 
-.message-upload {
-  margin: 20px 0; 
+.searchButton {  
+  padding: 12px 32px; /*border size*/
+  border-radius: 20px;
+  background: #5E2D91;
+  border: 1px solid #5E2D91;
+  font-size: 1.5rem;
+  color: #fff;
+  text-transform: uppercase;
+  cursor: pointer;
 }
 
-/* 如果你还想要确保输入框和按钮在其自身容器内居中，确保其容器（如 .tracker-message 或 .message-upload）也是flex容器 */
-.tracker-message,
-.message-upload {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-/* enter search and button */
-input[type="text"] {
-
-  width: 800px; 
-  height: 100px; 
-  padding: 100px; 
-  font-size: 1rem;
-  margin: auto; 
-  display: block; 
-  margin-top: 20px;
-
-}
-.searchButton {
-  margin-top: 50px;
-  padding: 10px 20px;
-  font-size: 1rem; 
-  border: none; 
-  border-radius: 20px; 
-  cursor: pointer; 
-  background-color: #5E2D91; 
-  color: white; 
+.searchButton:hover {  
+  background: rgba(94,45,145, 0.7);
 }
 
 .result-section{
@@ -176,39 +167,55 @@ input[type="text"] {
   flex-direction: column;
   align-items: center; 
   justify-content: center; 
-
 }
+
+/* Result text*/
 .search-results {
-  /* Result text*/
   padding: 20px;
   background: #f9f9f9; 
-  border: 1px solid #dcdcdc; 
+  border: 2px solid #dcdcdc; 
   border-radius: 4px; 
-  margin-top: -150px;
+  margin-top: 10px;
+  margin-bottom: 50px;
   height: 150px;
-  width: 500px;
-  
+  width: 300px;
+  text-align: center;
 }
-
 
 .search-results:empty {
   display: none;
 }
+
+.message-upload {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 20px 0;
+}
+
 .result-actions{
   padding-top: 30px;
-  
 }
-.report-scam,.learn-more,.homeButton,.nextStepsButton{
-  padding: 10px 50px;
+
+.report-scam,.learn-more,.homeButton,.nextStepsButton {
+  padding: 12px 40px;
   font-size: 1rem; 
   border: none; 
   border-radius: 20px; 
   cursor: pointer; 
   background-color: #5E2D91; 
   color: white; 
-  margin-right: 20px;
+  margin-right: 10px;
+  margin-left: 10px;
+  border: 2px solid transparent;
+  margin-bottom: 20px;
 }
 
+.report-scam:hover, .learn-more:hover, .homeButton:hover, .nextStepsButton:hover {
+  text-decoration: underline;
+}
+
+/*media*/
 @media (max-width: 768px) {
   .tracker-text {
     font-size: 5vw; 
@@ -238,6 +245,7 @@ input[type="text"] {
     margin-top: -50px; 
   }
 }
+/*end of media*/
 /*end of detect scam*/
 
 
@@ -323,6 +331,7 @@ input[type="text"] {
   color: #000;
   font-size: 19px;
   line-height: 1.8;
+  margin-top: 2rem;
 }
 
 .text-bullet {
