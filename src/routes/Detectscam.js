@@ -54,7 +54,7 @@ const Detectscam =()=>{
         <section className="result-section">
             <div className="result-actions">
             <button className="homeButton" onClick={() => navigate('/')}>Home</button>
-                <button className="report-scam" onClick={() => navigate('https://www.scamwatch.gov.au/report-a-scam')}>Report Scam</button>
+                <button className="report-scam" onClick={() => window.open('https://www.scamwatch.gov.au/report-a-scam')}>Report Scam</button>
                 <button className="learn-more" onClick={() => navigate('/helpsupport')}>Learn More</button>
             </div>
         </section>
