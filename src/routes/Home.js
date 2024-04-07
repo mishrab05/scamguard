@@ -39,21 +39,21 @@ const Home = () => {
                 <div className="card-content">
                     <h2 class='card-heading'>Be scam aware</h2>
                     <p>Learn how to spot and identify scams</p>
-                    <Link to="/" className="card-link-button"><a class='card-link'>Read more</a></Link>
+                    <Link to="/" className="card-link-button"><a class='card-link'>Learn More</a></Link>
                 </div>
             </div>
             <div className="info-card">
                 <div className="card-content">
                     <h2 class='card-heading'>I've been scammed</h2>
                     <p>Act straight away</p>
-                    <Link to="/helpsupport" className="card-link-button"><a class='card-link'>Read more</a></Link>
+                    <Link to="/helpsupport" className="card-link-button"><a class='card-link'>Learn More</a></Link>
                 </div>
             </div>
             <div className="info-card">
                 <div className="card-content">
                     <h2 class='card-heading'>Report Scam</h2>
                     <p>Warn others and report scam message</p>
-                    <Link to='https://www.scamwatch.gov.au/report-a-scam' className="card-link-button"><a class='card-link'>Read more</a></Link>
+                    <Link to='https://www.scamwatch.gov.au/report-a-scam' className="card-link-button"><a class='card-link'>Learn More</a></Link>
                 </div>
             </div>
         </div>

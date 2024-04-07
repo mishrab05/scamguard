@@ -22,9 +22,6 @@ const Navbar = () => {
 				<li>
 					<Link to='/helpsupport'>Help & Support</Link>
 				</li>
-				<li>
-					<Link to='/'>About Us</Link>
-				</li>
 			</ul>
 		</nav>
     </div>
