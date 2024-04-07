@@ -3,7 +3,7 @@ import { Routes, Route } from 'react-router-dom';
 
 import Home from './routes/Home'
 import HelpSupport from './routes/HelpSupport';
-import DetectScam from './routes/DetectScam';
+import DetectScam from './routes/Detectscam';
 
 function App() {
   return (
@@ -11,7 +11,7 @@ function App() {
         <Routes>
           <Route path='/' element={<Home />} />
           <Route path='/helpsupport' element={<HelpSupport />} />
-          <Route path='/detectScam' element={<DetectScam />} />
+          <Route path='/detectscam' element={<DetectScam />} />
         </Routes>
     </div>
   );
