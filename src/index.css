@@ -43,13 +43,14 @@ code {
 
 .btn {
   padding: 12px 32px;
-  border-radius: 20px;
+  border-radius: 30px;
   font-size: 1.5rem;
   text-transform: uppercase;
   background: #5E2D91;
   color: #fff;
   border: 1px solid #5E2D91;
   cursor: pointer;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.2);
 }
 
 .btn-light {

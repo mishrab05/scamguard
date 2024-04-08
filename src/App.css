@@ -81,12 +81,13 @@
   padding: 10px 20px; /*border*/
   background-color: #5E2D91; /* Default background color set to orange */
   text-decoration: none;
-  border-radius: 20px; /* Fully rounded edges for button */
+  border-radius: 30px; /* Fully rounded edges for button */
   position: absolute;
   display: flex;
   border: 2px solid transparent; /* Transparent border to maintain the layout */
   margin-top: 1rem;
   margin-left: 7rem;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.2);
 }
 
 /*card text*/
@@ -135,6 +136,7 @@
   margin: 0 auto; /* Center the box horizontally */
   margin-bottom: 1rem;
   margin-top: 2rem;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.2);
 }
 
 .search-box input[type="text"] {
@@ -149,13 +151,14 @@
 
 .searchButton {  
   padding: 12px 32px; /*border size*/
-  border-radius: 20px;
+  border-radius: 30px;
   background: #5E2D91;
   border: 1px solid #5E2D91;
   font-size: 1.5rem;
   color: #fff;
   text-transform: uppercase;
   cursor: pointer;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.2);
 }
 
 .searchButton:hover {  
@@ -197,11 +200,12 @@
   padding-top: 30px;
 }
 
+/*buttons*/
 .report-scam,.learn-more,.homeButton {
   padding: 12px 40px;
   font-size: 1rem; 
   border: none; 
-  border-radius: 20px; 
+  border-radius: 30px; 
   cursor: pointer; 
   background-color: #5E2D91; 
   color: white; 
@@ -209,6 +213,7 @@
   margin-left: 10px;
   border: 2px solid transparent;
   margin-bottom: 20px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.2);
 }
 
 .report-scam:hover, .learn-more:hover, .homeButton:hover {
