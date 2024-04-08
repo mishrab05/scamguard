@@ -33,8 +33,27 @@ const Detectscam =()=>{
                         A free tool to identify a scam text message
                     </h1>
                     <p class="centered-text">
-                        Simply copy a text message into the box below and click SEARCH
+                        Simply copy a text message into the box below and click SUBMIT
                     </p>
+
+                    {/* Card with instructions */}
+                    <div className="card-container">    
+                        <div className="info-cardx">
+                            <div className="card-contentx">
+                                <h3>User Guide:</h3>
+                                <ol>
+                                    <li>Open the message in your phone</li>
+                                    <li>Press and hold onto the message</li>
+                                    <li>Look for the "copy" symbol and select it</li>
+                                    <li>On this page, press and hold in the text box</li>
+                                    <li>Select "paste" symbol</li>
+                                    <li>Click Submit</li>
+                                </ol>
+                            </div>
+                        </div>
+                    </div>
+
+                    {/* Search box */}
                     <div className="search-box">
                         <input type="text" id="messageInput" placeholder="Enter text message here." value={message} onChange={(e) => setMessage(e.target.value)} />
                     </div>
@@ -43,7 +62,7 @@ const Detectscam =()=>{
                     </div>
                 </div>
             </div>
-		    </section>
+		</section>
       
         <section className="result-section">
             <div id="searchResults" className="search-results">
