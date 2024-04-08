@@ -9,7 +9,7 @@ const Detectscam =()=>{
   const [message, setMessage] = useState('');
   const [results, setResults] = useState('');
   const navigate = useNavigate();
-
+  // Connect to flask for prediction when search button is clicked
   const handleSearch = async() => {
     
     //setResults(`Results for "${message}"`);
