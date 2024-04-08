@@ -381,3 +381,15 @@
   margin-left: 3rem;
 }
 /*end of help and support*/
+
+.clearButton {
+  margin-left: 10px; 
+  padding: 12px 32px; /*border size*/
+  border-radius: 20px;
+  background: #5E2D91;
+  border: 1px solid #5E2D91;
+  font-size: 1.5rem;
+  color: #fff;
+  text-transform: uppercase;
+  cursor: pointer;
+}
