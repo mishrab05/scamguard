@@ -9,6 +9,13 @@ from sklearn.feature_extraction.text import CountVectorizer
 from sklearn.naive_bayes import MultinomialNB
 from sklearn import metrics
 from sklearn.model_selection import cross_val_score
+from flask import Flask, request, jsonify
+from flask_cors import CORS
+
+
+##Enable CORS to allow  frontend to communicate with the backend
+app = Flask(__name__)
+CORS(app) 
 
 
 sms_text = pd.read_csv("spam.csv", encoding='latin-1')
@@ -114,11 +121,22 @@ def predict_message_spam_or_ham(message):
     # Return the prediction result
     return 'Not a spam message' if prediction[0] == 0 else 'spam'
 
-# # Prompt the user to input a message
-# user_message = input("Enter a message to predict if it's spam or ham: ")
 
-# # Make a prediction based on the user input
-# prediction_result = predict_message_spam_or_ham(user_message)
+#-------------------------Flask route to predict spam or not -------------------------
+@app.route('/predict', methods=['POST'])
+def predict():
+    if request.method == 'POST':
+        try:
+            #extract the message
+            data = request.json
+            message = data['text']
+            #predict if the message is scam or not
+            result = predict_message_spam_or_ham(message)
+            #return the result
+            return jsonify({'result': result})
+        except Exception as e:
+            return jsonify({'error': str(e)})
 
-# # Print the prediction result
-# print(f'The message is predicted to be: {prediction_result}')
+if __name__ == '__main__':
+    app.run(debug=True)
+
