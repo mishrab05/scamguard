@@ -15,7 +15,7 @@ const Detectscam =()=>{
     //setResults(`Results for "${message}"`);
     try {
         // Update the URL to the location where your Flask app is running
-        const response = await axios.post('http://localhost:5000/predict', { text: message });
+        const response = await axios.post('http://172.214.52.33/predict', { text: message });
         setResults(`Result : ${response.data.result}`);
     } catch (error) {
         console.error('Error:', error);
