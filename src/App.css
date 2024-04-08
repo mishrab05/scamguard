@@ -344,7 +344,7 @@
 /*text content*/
 .text-small {
 	font-size: 18px;
-  line-height: 1.8;
+  line-height: 2.5rem;
 }
 
 .text-link {
@@ -375,5 +375,9 @@
 .text-bullet:hover {
   color: grey;
   text-decoration: underline;
+}
+
+.indented-list {
+  margin-left: 3rem;
 }
 /*end of help and support*/

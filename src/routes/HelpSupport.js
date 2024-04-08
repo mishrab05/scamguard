@@ -21,8 +21,9 @@ const HelpSupport = () => {
 					</h1>
 					<a href="#actfast" class="text-bullet">1. Act fast</a>
 					<a href="#gethelp" class="text-bullet">2. Get help</a>
-					<a href="#followup" class="text-bullet">3. Watch out for follow up scams</a>
-					<a href="#support" class="text-bullet">4. Get support</a>
+					<a href="#reportscam" class="text-bullet">3. Report scam</a>
+					<a href="#followup" class="text-bullet">4. Watch out for follow up scams</a>
+					<a href="#support" class="text-bullet">5. Get support</a>
 				</div>
 			</div>
 		</section>
@@ -34,14 +35,14 @@ const HelpSupport = () => {
 					<h1 class="text-big" id="actfast">
 						1. Act fast
 					</h1>
+					<p class="text-small">If you suspect you have been scammed, it is crucial to act swiftly to minimize potential damage.</p>
+					<p class="text-small">Here are the steps you should take:</p>
 					<p class="text-small">
-						1. Contact your bank or card provider immediately to report the scam. Request your bank to stop any transactions.
-					</p>
-					<p class="text-small">
-						2. Change your passwords to any accounts which may be accessed (Bank).
-					</p>
-					<p class="text-small">
-						3. Contact your telecommunications provider for advice to block future phishing attempts.
+						<ol class='indented-list'>
+							<li>Contact your bank or card provider immediately to report the scam. Request your bank to stop any transactions.</li>
+							<li>Change your passwords to any accounts which may be accessed (Bank).</li>
+							<li>Contact your telecommunications provider for advice to block future phishing attempts.</li>
+						</ol>
 					</p>
 					<p class="text-small">
 						You can also register your phone number on the Do Not Call Register which prevents you from getting most unsolicited telemarketing calls. 
@@ -65,8 +66,28 @@ const HelpSupport = () => {
 					<Link to='https://www.youtube.com/watch?v=EK8PlurJZog&ab_channel=AustralianFinancialComplaintsAuthority' target="_blank"><a class='text-link'>Click here to watch video</a></Link>
 					<p class="text-bold">Consider contacting IDCARE</p>
 					<p class="text-small">IDCARE is a free service in Australia and New Zealand. Their excellent response and mitigation services have helped thousands of Australian and New Zealander individuals and companies lessen the harm caused by identity information breach and misuse.</p>
-					<p class="text-bold">Warn others and report</p>
-					<p class="text-small">You can help us warn others by reporting to Scamwatch</p>
+				</div>
+			</div>
+		</section>
+
+		<section class="section">
+			<div class="box-main">
+				<div class="secondHalf">
+					<h1 class="text-big" id="reportscam">
+						3. Report scam
+					</h1>
+					<p class="text-small">You can help us warn others by reporting to Scamwatch.</p>
+					<p class="text-small">Steps to report on ScamWatch:</p>
+					<p class="text-small">
+						<ol class='indented-list'>
+							<li>Select the link below</li>
+							<li>On ScamWatch website, look for the orange Report Scam button and select it</li>
+							<li>Select Start report</li>
+							<li>Enter scam details as prompted</li>
+							<li>Enter your details</li>
+							<li>Preview and Submit your report</li>
+						</ol>
+					</p>
 					<Link to='https://www.scamwatch.gov.au/report-a-scam' target="_blank"><a class='text-link'>Click here to report to Scamwatch</a></Link>
 				</div>
 			</div>
@@ -76,7 +97,7 @@ const HelpSupport = () => {
 			<div class="box-main">
 				<div class="secondHalf">
 					<h1 class="text-big" id="followup">
-						3. Watch out for follow up scams
+						4. Watch out for follow up scams
 					</h1>
 					<p class="text-small">Scammers frequently return for more money if they have already taken it from you.</p>
 					<p class="text-small">Regretfully, 1 in 3 scam victims have fallen victim to scams more than once.</p>
@@ -88,7 +109,7 @@ const HelpSupport = () => {
 			<div class="box-main">
 				<div class="secondHalf">
 					<h1 class="text-big" id="support">
-						4. Get support
+						5. Get support
 					</h1>
 					<p class="text-small">
 						Anyone could be a victim of a scam which is a terrible experience. You might feel like it is your fault but IT IS NOT.
