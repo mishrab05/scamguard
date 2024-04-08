@@ -39,7 +39,7 @@ const Detectscam =()=>{
                         <input type="text" id="messageInput" placeholder="Enter text message here." value={message} onChange={(e) => setMessage(e.target.value)} />
                     </div>
                     <div>
-                        <button className="searchButton"onClick={handleSearch}>Search</button>
+                        <button className="searchButton"onClick={handleSearch}>Submit</button>
                     </div>
                 </div>
             </div>
