@@ -10,9 +10,12 @@ CORS(app)  # Enable CORS to allow your frontend to communicate with this backend
 def predict():
     if request.method == 'POST':
         try:
+            #extract the message
             data = request.json
             message = data['text']
+            #predict if the message is scam or not
             result = predict_message_spam_or_ham(message)
+            #return the result
             return jsonify({'result': result})
         except Exception as e:
             return jsonify({'error': str(e)})
