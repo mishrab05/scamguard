@@ -10,7 +10,7 @@ const Navbar = () => {
         <nav class="navbar background">
 		<div class='logo'>
 			<img src={Image}/>
-			<Link to='/'><h1>SCAM GUARD</h1></Link>
+			<Link to='/'><h1>SCAMSECURE</h1></Link>
 		</div>
 			<ul class="nav-list">
 				<li>

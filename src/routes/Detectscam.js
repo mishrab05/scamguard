@@ -3,15 +3,24 @@ import { Link, useNavigate } from 'react-router-dom';
 import '../App.css'; 
 import Navbar from '../components/Navbar'
 import Image from '../assets/trackorbg.jpg'
+import axios from 'axios';
 
 const Detectscam =()=>{
   const [message, setMessage] = useState('');
   const [results, setResults] = useState('');
   const navigate = useNavigate();
 
-  const handleSearch = () => {
+  const handleSearch = async() => {
     
-    setResults(`Results for "${message}"`);
+    //setResults(`Results for "${message}"`);
+    try {
+        // Update the URL to the location where your Flask app is running
+        const response = await axios.post('http://localhost:5000/predict', { text: message });
+        setResults(`Result : ${response.data.result}`);
+    } catch (error) {
+        console.error('Error:', error);
+        setResults('Error making prediction');
+    }
   };
 
   return(
@@ -58,7 +67,8 @@ const Detectscam =()=>{
                         <input type="text" id="messageInput" placeholder="Enter text message here." value={message} onChange={(e) => setMessage(e.target.value)} />
                     </div>
                     <div>
-                        <button className="searchButton"onClick={handleSearch}>Submit</button>
+                        <button className="searchButton"onClick={handleSearch}>Search</button>
+                        <button className="clearButton" onClick={() => setMessage('')}>Clear</button>
                     </div>
                 </div>
             </div>
@@ -66,7 +76,7 @@ const Detectscam =()=>{
       
         <section className="result-section">
             <div id="searchResults" className="search-results">
-                <p>Search Results</p>
+                <p>{results}</p>
             </div>
         </section>
 
