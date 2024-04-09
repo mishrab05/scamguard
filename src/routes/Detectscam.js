@@ -4,6 +4,7 @@ import '../App.css'; // Import CSS file for global styles
 import Navbar from '../components/Navbar'; // Import Navbar component
 import Image from '../assets/trackorbg.jpg'; // Import image asset
 import axios from 'axios'; // Import axios for making HTTP requests
+import { BsArrowLeft, BsArrowRight } from 'react-icons/bs'; // Import the arrow left icon from React Icons
 
 // Define the Detectscam component
 const Detectscam = () => {
@@ -94,8 +95,8 @@ const Detectscam = () => {
         <section className="result-section">
           <div className="result-actions">
             {/* Navigation buttons */}
-            <button className="homeButton" onClick={() => navigate('/')}>Home</button>
-            <button className="learn-more" onClick={() => navigate('/helpsupport')}>Help & Support</button>
+            <button className="homeButton" onClick={() => navigate('/')}><BsArrowLeft />  Home</button>
+            <button className="learn-more" onClick={() => navigate('/helpsupport')}>Help & Support <BsArrowRight /></button>
           </div>
         </section>
 
