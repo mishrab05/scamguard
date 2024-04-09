@@ -1,62 +1,68 @@
+/* Resetting default margin and padding for all elements */
 * {
 	margin: 0;
 	padding: 0;
 }
 
-/*navigation bar*/
+/* Styles for the navigation bar */
 .navbar {
-	display: flex;
-	align-items: center;
-	justify-content: space-between;
-	position: sticky;
-	top: 0;
-	cursor: pointer;
-    width: 100%;
-    height: 90px;
-    padding: 1rem;
-    z-index: 10;
+	display: flex; /* Display as a flex container */
+	align-items: center; /* Center items vertically */
+	justify-content: space-between; /* Space items evenly along the main axis */
+	position: sticky; /* Positioning type: sticky */
+	top: 0; /* Stick to the top of the viewport */
+	cursor: pointer; /* Cursor type: pointer */
+    width: 100%; /* Full width */
+    height: 90px; /* Fixed height for the navbar */
+    padding: 1rem; /* Padding around the navbar content */
+    z-index: 10; /* Stack order */
 }
 
-/*navigation bar background*/
+/* Background style for the navigation bar */
 .background {
-	background: rgba(255,255,255, 1);
-	background-blend-mode: darken;
-	background-size: cover;
+	background: rgba(255,255,255, 1); /* White background color */
+	background-blend-mode: darken; /* Blend mode for background */
+	background-size: cover; /* Cover the entire background */
 }
 
-/*Home, detect scam...*/
+/* Styles for the navigation links list */
 .nav-list {
-	display: flex;
-	align-items: center;
+	display: flex; /* Display as a flex container */
+	align-items: center; /* Center items vertically */
 }
 
+/* Styles for individual list items in the navigation links list */
 .nav-list li {
-	list-style: none;
-	padding: 26px 30px;
+	list-style: none; /* Remove default list styles */
+	padding: 26px 30px; /* Padding around each link */
 }
 
+/* Styles for anchor tags (links) in the navigation links list */
 .nav-list li a {
-	text-decoration: none;
-	color: #5E2D91;
-    font-weight: 600;
+	text-decoration: none; /* Remove underline from links */
+	color: #5E2D91; /* Link text color */
+    font-weight: 600; /* Font weight for links */
 }
 
+/* Hover effect for anchor tags in the navigation links list */
 .nav-list li a:hover {
-    color: rgb(94, 45, 145, 0.8);
+    color: rgb(94, 45, 145, 0.8); /* Change text color on hover */
 }
 
+/* Styles for the logo */
 .logo {
-	display: flex;
-	align-items: center;
+	display: flex; /* Display as a flex container */
+	align-items: center; /* Center items vertically */
 }
 
+/* Styles for the logo image */
 .logo img {
-	height: 90px;
-	width: auto;
-	margin-right: 1rem;
+	height: 90px; /* Fixed height for the logo image */
+	width: auto; /* Auto-adjust width */
+	margin-right: 1rem; /* Margin to separate logo from text */
 }
 
-
-
-
-
+/* Active link styling */
+.nav-list li a.active {
+	text-decoration: underline; /* Underline active links */
+}

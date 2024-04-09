@@ -1,31 +1,37 @@
-import React from 'react'
-import {Link} from 'react-router-dom'
-import './NavbarStyles.css'
-import Image from '../assets/logo.jpeg'
-
+import React from 'react';
+import { NavLink } from 'react-router-dom'; // Import NavLink from react-router-dom for active link styling
+import './NavbarStyles.css'; // Import the CSS file for styling
+import Image from '../assets/logo.jpeg'; // Import the logo image
 
 const Navbar = () => {
   return (
     <div>
-        <nav class="navbar background">
-		<div class='logo'>
-			<img src={Image}/>
-			<Link to='/'><h1>SCAMSECURE</h1></Link>
-		</div>
-			<ul class="nav-list">
+		{/* Navigation bar */}
+		<nav className="navbar background">
+			<div className='logo'>
+				{/* Logo */}
+				<img src={Image} alt="Logo" />
+				{/* NavLink for Home */}
+				<NavLink exact to='/' activeClassName="active"><h1>SCAMSECURE</h1></NavLink>
+			</div>
+			{/* Navigation links list */}
+			<ul className="nav-list">
+				{/* NavLink for Home */}
 				<li>
-					<Link to='/'>Home</Link>
+					<NavLink exact to='/' activeClassName="active">Home</NavLink>
 				</li>
+				{/* NavLink for Detect Scam */}
 				<li>
-					<Link to='/detectscam'>Detect Scam</Link>
+					<NavLink to='/detectscam' activeClassName="active">Detect Scam</NavLink>
 				</li>
+				{/* NavLink for Help & Support */}
 				<li>
-					<Link to='/helpsupport'>Help & Support</Link>
+					<NavLink to='/helpsupport' activeClassName="active">Help & Support</NavLink>
 				</li>
 			</ul>
 		</nav>
     </div>
-  )
-}
+  );
+};
 
-export default Navbar
+export default Navbar;
