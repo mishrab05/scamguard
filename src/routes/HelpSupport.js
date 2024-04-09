@@ -1,18 +1,22 @@
-import React from 'react'
-import '../App.css'; 
-import Navbar from '../components/Navbar'
-import {Link} from 'react-router-dom'
+import React from 'react'; // Import React library
+import '../App.css'; // Import CSS file for global styles
+import Navbar from '../components/Navbar'; // Import Navbar component
+import { Link } from 'react-router-dom'; // Import Link for navigation
 
+
+// Define the HelpSupport component
 const HelpSupport = () => {
   return (
     <div>
 		<Navbar/>
 
+		{/* Header section */}
 		<section class="header">
 			<h1 class="text-header">I'VE BEEN SCAMMED</h1>
 			<p class="text-header">Steps to take after falling victim to a scam</p>	
 		</section>
 
+		{/* Section for main content */}
 		<section class="section">
 			<div class="box-main">
 				<div class="firsthalf">
@@ -28,10 +32,11 @@ const HelpSupport = () => {
 			</div>
 		</section>
 
-
+		{/* Section for step 1 */}
 		<section class="section">
 			<div class="box-main">
 				<div class="firstHalf">
+					{/* Step 1: Act fast */}
 					<h1 class="text-big" id="actfast">
 						1. Act fast
 					</h1>
@@ -52,9 +57,11 @@ const HelpSupport = () => {
 			</div>
 		</section>
 
+		{/* Section for step 2 */}
 		<section class="section">
 			<div class="box-main">
 				<div class="secondHalf">
+					{/* Step 2: Get help */}
 					<h1 class="text-big" id="gethelp">
 						2. Get help
 					</h1>
@@ -70,6 +77,7 @@ const HelpSupport = () => {
 			</div>
 		</section>
 
+		{/* Section for step 3 */}
 		<section class="section">
 			<div class="box-main">
 				<div class="secondHalf">
@@ -93,6 +101,7 @@ const HelpSupport = () => {
 			</div>
 		</section>
 
+		{/* Section for step 4 */}
 		<section class="section">
 			<div class="box-main">
 				<div class="secondHalf">
@@ -105,6 +114,7 @@ const HelpSupport = () => {
 			</div>
 		</section>
 
+		{/* Section for step 5 */}
 		<section class="section">
 			<div class="box-main">
 				<div class="secondHalf">
