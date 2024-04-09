@@ -82,6 +82,9 @@ const Detectscam = () => {
 
         {/* Section to display search results */}
         <section className="result-section">
+            <h1 className="centered-text">
+                Result:
+            </h1>
           <div id="searchResults" className="search-results">
             <p>{results}</p>
           </div>
@@ -92,10 +95,10 @@ const Detectscam = () => {
           <div className="result-actions">
             {/* Navigation buttons */}
             <button className="homeButton" onClick={() => navigate('/')}>Home</button>
-            <button className="report-scam" onClick={() => window.open('https://www.scamwatch.gov.au/report-a-scam')}>Report Scam</button>
             <button className="learn-more" onClick={() => navigate('/helpsupport')}>Help & Support</button>
           </div>
         </section>
+
       </section>
     </div>
   );
