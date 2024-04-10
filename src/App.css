@@ -399,3 +399,17 @@
 }
 /*end of help and support*/
 
+
+
+.footer {
+	background-color: rgb(0, 0, 0, 0.6);
+}
+
+.text-footer {
+	text-align: center;
+	padding: 30px 0;
+	font-family: "Ubuntu", sans-serif;
+	display: flex;
+	justify-content: center;
+	color: #fff;
+}
