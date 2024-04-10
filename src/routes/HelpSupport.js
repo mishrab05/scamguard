@@ -140,6 +140,12 @@ const HelpSupport = () => {
 			</div>
 		</section>
 
+		<footer className="footer">
+            <p className="text-footer">
+                Team - Agile Rangers
+            </p>
+        </footer>
+
 	</div>
   )
 }
