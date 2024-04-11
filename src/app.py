@@ -11,11 +11,41 @@ from sklearn import metrics
 from sklearn.model_selection import cross_val_score
 from flask import Flask, request, jsonify
 from flask_cors import CORS
-
+from flask_sqlalchemy import SQLAlchemy
 
 ##Enable CORS to allow  frontend to communicate with the backend
 app = Flask(__name__)
 CORS(app) 
+##Download packages
+nltk.download('punkt')
+nltk.download('stopwords')
+# Database connection settings
+params = (
+    "DRIVER={ODBC Driver 18 for SQL Server};"
+    "SERVER=5120main.database.windows.net;"
+    "PORT=1433;"
+    "DATABASE=5120main;"
+    "UID=user;"
+    "PWD=Fit51205120"
+)
+
+# URI format for SQL Alchemy (URL encode the parameters)
+DATABASE_URI = f'mssql+pyodbc:///?odbc_connect={params}'
+
+app.config['SQLALCHEMY_DATABASE_URI'] = DATABASE_URI
+app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
+
+db = SQLAlchemy(app)
+
+# Define a model that reflects your table structure
+class Report(db.Model):
+    __tablename__ = 'scam_messages'
+    amount = db.Column(db.Integer, primary_key=True)
+    num_reports = db.Column(db.String(255))
+    fin_loss_reports = db.Column(db.String(255))
+
+    def __repr__(self):
+        return f'<Report amount={self.amount} num_reports={self.num_reports} fin_loss_reports={self.fin_loss_reports}>'
 
 
 sms_text = pd.read_csv("spam.csv", encoding='latin-1')
@@ -137,6 +167,22 @@ def predict():
         except Exception as e:
             return jsonify({'error': str(e)})
 
+@app.route('/latest-report')
+def latest_report():
+    try:
+        # Assuming you want the latest report; adjust as necessary.
+        report = Report.query.order_by(Report.amount.desc()).first()
+        if report:
+            return jsonify({
+                'amount': report.amount,
+                'num_reports': report.num_reports,
+                'fin_loss_reports': report.fin_loss_reports
+            })
+        else:
+            return jsonify({'error': 'No reports found.'}), 404
+    except Exception as e:
+        return jsonify({'error': str(e)}), 500
+    
 if __name__ == '__main__':
     app.run(host='0.0.0.0',port=80,debug=True)
 
