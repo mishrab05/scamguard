@@ -397,6 +397,55 @@
 .indented-list {
   margin-left: 3rem;
 }
+
+.statistics-container {
+  background-color: #f2f2f2;
+  border-radius: 8px;
+  padding: 20px;
+  margin: 20px 0;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.statistics-title {
+  font-size: 1.5em;
+  color: #333;
+  margin-bottom: 16px;
+}
+
+.counter-graph {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.statistic {
+  text-align: center;
+  margin: 10px 0;
+}
+
+.statistic .label {
+  font-size: 1.2em;
+  color: #666;
+  margin-bottom: 5px;
+}
+
+.statistic .value {
+  font-size: 2em;
+  font-weight: bold;
+  color: #333;
+}
+
+/* You can adjust the media query breakpoints and styles according to your layout needs */
+@media (max-width: 768px) {
+  .counter-graph {
+    flex-direction: column;
+  }
+
+  .statistic {
+    margin: 20px 0;
+  }
+}
+
 /*end of help and support*/
 
 

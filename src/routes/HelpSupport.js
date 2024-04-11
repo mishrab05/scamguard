@@ -1,10 +1,49 @@
-import React from 'react'; // Import React library
+import React, { useState, useEffect } from 'react'; 
+import axios from 'axios';
 import '../App.css'; // Import CSS file for global styles
 import Navbar from '../components/Navbar'; // Import Navbar component
 import { Link } from 'react-router-dom'; // Import Link for navigation
 
-
 // Define the HelpSupport component
+const StaticCounter = () => {
+	const [reportData, setReportData] = useState({
+	  amount: 0,
+	  numReports: 0,
+	  finLossReports: 0,
+	});
+  
+	useEffect(() => {
+	  axios.get('http://172.214.52.33/latest-report') // Replace with your actual Flask API URL
+		.then(response => {
+		  setReportData({
+			amount: response.data.amount,
+			numReports: response.data.num_reports,
+			finLossReports: response.data.fin_loss_reports,
+		  });
+		})
+		.catch(error => {
+		  console.error('Error fetching data:', error);
+		});
+	}, []);
+  
+	return (
+	  <div className="counter-graph">
+		<div className="statistic">
+		  <div className="label">Amount lost</div>
+		  <div className="value">${new Intl.NumberFormat().format(reportData.amount)}</div>
+		</div>
+		<div className="statistic">
+		  <div className="label">Number of reports</div>
+		  <div className="value">{reportData.numReports}</div>
+		</div>
+		<div className="statistic">
+		  <div className="label">Reports with financial losses</div>
+		  <div className="value">{reportData.finLossReports}%</div>
+		</div>
+	  </div>
+	);
+  };
+  // Define the HelpSupport component
 const HelpSupport = () => {
   return (
     <div>
@@ -15,6 +54,12 @@ const HelpSupport = () => {
 			<h1 class="text-header">I'VE BEEN SCAMMED</h1>
 			<p class="text-header">Steps to take after falling victim to a scam</p>	
 		</section>
+
+		{/* Statistics section */}
+		<div className="statistics-container">
+        <h1 className="statistics-title">Statistics:</h1>
+        <StaticCounter />
+      </div>
 
 		{/* Section for main content */}
 		<section class="section">
