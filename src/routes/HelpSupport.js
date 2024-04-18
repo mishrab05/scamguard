@@ -3,6 +3,7 @@ import axios from 'axios';
 import '../App.css'; // Import CSS file for global styles
 import Navbar from '../components/Navbar'; // Import Navbar component
 import { Link } from 'react-router-dom'; // Import Link for navigation
+import service from '../axios/service';
 
 // Define the HelpSupport component
 const StaticCounter = () => {
@@ -13,8 +14,11 @@ const StaticCounter = () => {
 	});
   
 	useEffect(() => {
-	  axios.get('http://172.214.52.33/latest-report') // Replace with your actual Flask API URL
-		.then(response => {
+		// axios.get('http://172.214.52.33/latest-report') // Replace with your actual Flask API URL
+		service({
+			method: 'GET',
+			url: '/latest-report'
+		}).then(response => {
 		  setReportData({
 			amount: response.data.amount,
 			numReports: response.data.num_reports,

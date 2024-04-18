@@ -5,6 +5,7 @@ import Navbar from '../components/Navbar'; // Import Navbar component
 import Image from '../assets/trackorbg.jpg'; // Import image asset
 import axios from 'axios'; // Import axios for making HTTP requests
 import { BsArrowLeft, BsArrowRight } from 'react-icons/bs'; // Import the arrow left icon from React Icons
+import service from '../axios/service';
 
 // Define the Detectscam component
 const Detectscam = () => {
@@ -16,7 +17,14 @@ const Detectscam = () => {
   const handleSearch = async () => {
     try {
       // Make a POST request to the Flask API for prediction
-      const response = await axios.post('http://172.214.52.33/predict', { text: message });
+      // const response = await axios.post('http://172.214.52.33/predict', { text: message });
+      const response = await service({
+        method: 'POST',
+        url: '/predict',
+        data: {
+          text: message
+        }
+      });
       setResults(`Result : ${response.data.result}`); // Update results with prediction
     } catch (error) {
       console.error('Error:', error); // Log error if request fails

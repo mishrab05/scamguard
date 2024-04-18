@@ -153,7 +153,7 @@ def predict_message_spam_or_ham(message):
 
 
 #-------------------------Flask route to predict spam or not -------------------------
-@app.route('/predict', methods=['POST'])
+@app.route('/predict', methods=['GET','POST'])
 def predict():
     if request.method == 'POST':
         try:
