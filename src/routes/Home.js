@@ -33,7 +33,7 @@ const Home = () => {
               </p>
               {/* Button to learn more */}
               <div>
-                <Link to='/detectscam' className='btn'>Learn More</Link>
+                <Link to='/detectscam' className='btn'>Get started</Link>
               </div>
             </div>
           </div>

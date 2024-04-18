@@ -101,10 +101,16 @@ const Detectscam = () => {
         </section>
 
         <footer className="footer">
-            <p className="text-footer">
-                Team - Agile Rangers
-            </p>
-        </footer>
+            <div className="footer-left">
+                <p className="text-footer">
+                  Team - Agile Rangers
+                </p>
+              </div>
+              <div className="footer-right">
+                <p className="footer-link">Privacy</p>
+                <p className="footer-link">Terms & Conditions</p>
+            </div>
+		    </footer>
 
         </section>
     </div>

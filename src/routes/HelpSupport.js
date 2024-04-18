@@ -98,6 +98,9 @@ const HelpSupport = () => {
 						You can also register your phone number on the Do Not Call Register which prevents you from getting most unsolicited telemarketing calls. 
 					</p>
 					<Link to='https://www.donotcall.gov.au/' target="_blank"><a class='text-link'>Click here to register</a></Link>
+					<a href="https://www.donotcall.gov.au/" target="_blank">
+    					<button class="button">Register</button>
+					</a>
 				</div>
 			</div>
 		</section>
@@ -113,9 +116,13 @@ const HelpSupport = () => {
 					<p class="text-small">
 						If you're not satisfied with the way your bank handled your case, make a complaint to the Australian Financial Complaints Authority.
 					</p>
-					<Link to='https://www.afca.org.au/make-a-complaint' target="_blank"><a class='text-link'>Click here to file complaint</a></Link>
+					<a href="https://www.afca.org.au/make-a-complaint" target="_blank" class="button-link">
+    					<button class="button">File complaint</button>
+					</a>
 					<p class="text-small">How do i make a complaint?</p>
-					<Link to='https://www.youtube.com/watch?v=EK8PlurJZog&ab_channel=AustralianFinancialComplaintsAuthority' target="_blank"><a class='text-link'>Click here to watch video</a></Link>
+					<a href="https://www.youtube.com/watch?v=EK8PlurJZog&ab_channel=AustralianFinancialComplaintsAuthority" target="_blank" class="button-link">
+						<button class="button">Watch video</button>
+					</a>
 					<p class="text-bold">Consider contacting IDCARE</p>
 					<p class="text-small">IDCARE is a free service in Australia and New Zealand. Their excellent response and mitigation services have helped thousands of Australian and New Zealander individuals and companies lessen the harm caused by identity information breach and misuse.</p>
 				</div>
@@ -141,7 +148,9 @@ const HelpSupport = () => {
 							<li>Preview and Submit your report</li>
 						</ol>
 					</p>
-					<Link to='https://www.scamwatch.gov.au/report-a-scam' target="_blank"><a class='text-link'>Click here to report to Scamwatch</a></Link>
+					<a href="https://www.scamwatch.gov.au/report-a-scam" target="_blank" class="button-link">
+						<button class="button">Report to ScamWatch</button>
+					</a>
 				</div>
 			</div>
 		</section>
@@ -177,19 +186,30 @@ const HelpSupport = () => {
 					</p>
 					<p class="text-bold">Beyond Blue</p>
 					<p class="text-small">1300 22 4636 or online chat (24 hours a day, 7 days a week)</p>
-					<Link to='https://www.beyondblue.org.au/get-support/talk-to-a-counsellor/chat' target="_blank"><a class='text-link'>Click here for online support</a></Link>
+					<a href="https://www.beyondblue.org.au/get-support/talk-to-a-counsellor/chat" target="_blank" class="button-link">
+						<button class="button">Beyond Blue</button>
+					</a>
 					<p class="text-bold">Lifeline</p>
 					<p class="text-small">13 11 14 or online crisis support chat (24 hours a day, 7 days a week)</p>
-					<Link to='https://www.lifeline.org.au/crisis-chat/' target="_blank"><a class='text-link'>Click here for online support</a></Link>
+					<a href="https://www.lifeline.org.au/crisis-chat/" target="_blank" class="button-link">
+						<button class="button">Lifeline</button>
+					</a>
 				</div>
 			</div>
 		</section>
 
 		<footer className="footer">
-            <p className="text-footer">
-                Team - Agile Rangers
-            </p>
-        </footer>
+			<div className="footer-left">
+				<p className="text-footer">
+					Team - Agile Rangers
+				</p>
+			</div>
+			<div className="footer-right">
+				<p className="footer-link">Privacy</p>
+				<p className="footer-link">Terms & Conditions</p>
+			</div>
+		</footer>
+
 
 	</div>
   )
