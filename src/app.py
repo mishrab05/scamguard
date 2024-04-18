@@ -149,7 +149,7 @@ def predict_message_spam_or_ham(message):
     prediction = nb_classifier.predict(message_vect)
     
     # Return the prediction result
-    return 'Not a spam message' if prediction[0] == 0 else 'spam'
+    return 'Not a scam message' if prediction[0] == 0 else 'scam'
 
 
 #-------------------------Flask route to predict spam or not -------------------------
