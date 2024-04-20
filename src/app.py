@@ -149,11 +149,11 @@ def predict_message_spam_or_ham(message):
     prediction = nb_classifier.predict(message_vect)
     
     # Return the prediction result
-    return 'Not a spam message' if prediction[0] == 0 else 'spam'
+    return 'Not a scam message' if prediction[0] == 0 else 'scam'
 
 
 #-------------------------Flask route to predict spam or not -------------------------
-@app.route('/predict', methods=['POST'])
+@app.route('/predict', methods=['GET','POST'])
 def predict():
     if request.method == 'POST':
         try:
@@ -184,5 +184,5 @@ def latest_report():
         return jsonify({'error': str(e)}), 500
     
 if __name__ == '__main__':
-    app.run(host='0.0.0.0',port=80,debug=True)
+    app.run(host='0.0.0.0',debug=True)
 
