@@ -32,7 +32,7 @@ const ScamQuiz = () => {
               </p>
               {/* Button to learn more */}
               <div>
-                <Link to='/' className='btn'>Start Quiz</Link>
+                <Link to='/Quiz' className='btn'>Start Quiz</Link>
               </div>
             </div>
           </div>

@@ -196,7 +196,7 @@ def latest_report():
 
 
 
-@app.route('/score-submit', methods=['GET','POST'])
+@app.route('/score-submit', methods=['POST'])
 def score_submit():
     data = request.get_json()
     new_score = Score(username=data['username'], score=data['score'])
