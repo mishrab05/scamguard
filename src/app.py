@@ -12,6 +12,7 @@ from sklearn.model_selection import cross_val_score
 from flask import Flask, request, jsonify
 from flask_cors import CORS
 from flask_sqlalchemy import SQLAlchemy
+from datetime import datetime
 
 ##Enable CORS to allow  frontend to communicate with the backend
 app = Flask(__name__)
@@ -46,6 +47,16 @@ class Report(db.Model):
 
     def __repr__(self):
         return f'<Report amount={self.amount} num_reports={self.num_reports} fin_loss_reports={self.fin_loss_reports}>'
+
+class Score(db.Model):
+    __tablename__ = 'Score'
+    id = db.Column(db.Integer, primary_key=True)
+    username = db.Column(db.String(50), nullable=False)
+    score = db.Column(db.Integer, nullable=False)
+    completed_at = db.Column(db.DateTime, default=datetime.utcnow)
+
+    def __repr__(self):
+        return f'<Score {self.username} {self.score}>'
 
 
 sms_text = pd.read_csv("spam.csv", encoding='latin-1')
@@ -182,7 +193,35 @@ def latest_report():
             return jsonify({'error': 'No reports found.'}), 404
     except Exception as e:
         return jsonify({'error': str(e)}), 500
-    
+
+
+
+@app.route('/score-submit', methods=['GET','POST'])
+def score_submit():
+    data = request.get_json()
+    new_score = Score(username=data['username'], score=data['score'])
+    db.session.add(new_score)
+    db.session.flush()  # This allows us to use the id of the new_score object before commit
+
+    # Commit the session after flush to save the score
+    db.session.commit()
+
+    # Get the top five scores
+    top_five_scores = Score.query.order_by(Score.score.desc()).limit(5).all()
+
+    # Calculate the percentile rank
+    count_higher_scores = Score.query.filter(Score.score > data['score']).count()
+    count_all_scores = Score.query.count()
+    percentile_rank = (count_all_scores - count_higher_scores) / count_all_scores * 100
+
+    top_scores = [{'username': score.username, 'score': score.score} for score in top_five_scores]
+
+    return jsonify({
+        'new_score_id': new_score.id,
+        'top_scores': top_scores,
+        'percentile_rank': percentile_rank
+    }), 201
+
 if __name__ == '__main__':
     app.run(host='0.0.0.0',debug=True)
 
