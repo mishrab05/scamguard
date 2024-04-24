@@ -209,7 +209,8 @@ const HelpSupport = () => {
 				</p>
 			</div>
 			<div className="footer-right">
-				<p className="footer-link">Privacy</p>
+				<p className="footer-link">About Us</p>
+				<p className="footer-link">Privacy Policy</p>
 				<p className="footer-link">Terms & Conditions</p>
 			</div>
 		</footer>

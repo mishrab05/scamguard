@@ -443,6 +443,20 @@
   }
 }
 
+/*buttons in help and support page*/
+.button {
+  background-color: #5E2D91; /* Button color */
+  color: #fff; /* Text color */
+  border: none; /* Remove default button border */
+  padding: 10px 20px; /* Padding inside the button */
+  cursor: pointer; /* Show pointer cursor on hover */
+  border-radius: 5px; /* Rounded corners */
+  font-size: 16px; /* Font size */
+}
+
+.button:hover {
+  text-decoration: underline; 
+}
 /*end of help and support*/
 
 
@@ -485,9 +499,50 @@
 
 
 
-.button {
-  background-color: #5E2D91; /* Button color */
-  color: #fff; /* Text color */
+/*quiz*/
+.username-input {
+  display: flex;
+  width: 100%;
+  max-width: 250px; /* Adjust as needed */
+  margin: 0 auto; /* Center the box horizontally */
+  /*margin-bottom: 1rem;*/
+  margin-top: 10rem;
+  flex-direction: column;
+  align-items: center;
+}
+
+.username-input input[type="text"] {
+  height: 50px;
+  width: 250px;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  font-size: 1.2rem;
+  text-align: left;
+}
+
+.quiz-section {
+  display: flex;
+  flex-direction: column;
+  /*justify-content: center;*/
+  align-items: center;
+  width: 800px;
+  height: 450px;
+  border-radius: 20px;
+  margin: 20px auto; /* Center the box horizontally */
+  background-color: #fff;
+}
+
+.question-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 1rem;
+}
+
+.question-section .answer-section button {
+  margin: 5px;
+  cursor: pointer;
   border: none; /* Remove default button border */
   padding: 10px 20px; /* Padding inside the button */
   cursor: pointer; /* Show pointer cursor on hover */
@@ -495,8 +550,41 @@
   font-size: 16px; /* Font size */
 }
 
-.button:hover {
-  text-decoration: underline; 
+.question-section .answer-section button:hover {
+  text-decoration: underline;
 }
 
+.question-section .answer-section button.is-scam {
+  background-color: red;
+  color: white;
+}
+
+.question-section .answer-section button.is-not-scam {
+  background-color: green;
+  color: white;
+}
+
+.explanation-section{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.quiz-section .explanation-section button {
+  margin-top: 10px;
+  padding: 10px 20px;
+  background-color: #5E2D91;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
+}
+
+.quiz-section .explanation-section button:hover {
+  /*background-color: #4a226a;*/
+  text-decoration: underline;
+}
+/*end of quiz*/
 
