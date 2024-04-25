@@ -5,7 +5,7 @@ const Leaderboard = () => {
   return (
     <main>
       <div id="header">
-        <h1>Ranking</h1>
+        <h1 class='rank'>Ranking</h1>
       </div>
       <div id="leaderboard">
         <div className="ribbon"></div>
