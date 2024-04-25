@@ -98,12 +98,8 @@ function Quiz() {
         <div>
         {/* Background section with inline styles */}
         <section style={{
-            backgroundImage: `url(${Image})`, // Set background image
-            backgroundSize: 'cover', // Cover the entire background
-            backgroundRepeat: 'no-repeat', // Do not repeat the background
-            backgroundAttachment: 'fixed', // Fix the background position
-            boxShadow: 'inset 0 0 0 2000px rgba(255, 255, 255, 0.35)', // Create a background overlay
-            backgroundBlendMode: 'darken', // Blend mode for the background
+            background: 'linear-gradient(135deg, #B58DED33, #B58DED)',
+            width: '100%',
             height: '100vh',
         }}>
         <Navbar />

@@ -101,7 +101,7 @@ const HelpSupport = () => {
 					<p class="text-small">
 						You can also register your phone number on the Do Not Call Register which prevents you from getting most unsolicited telemarketing calls. 
 					</p>
-					<Link to='https://www.donotcall.gov.au/' target="_blank"><a class='text-link'>Click here to register</a></Link>
+					{/*<Link to='https://www.donotcall.gov.au/' target="_blank"><a class='text-link'>Click here to register</a></Link>*/}
 					<a href="https://www.donotcall.gov.au/" target="_blank">
     					<button class="button">Register</button>
 					</a>
