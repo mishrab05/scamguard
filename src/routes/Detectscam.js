@@ -91,7 +91,6 @@ const Detectscam = () => {
             </div>
 
               <div>
-                {/* Search and clear buttons */}
                 <button className="searchButton" onClick={handleSearch}>Submit</button>
                 <button className="clearButton" onClick={() => {setMessage('');setResults('');}}>Clear</button>
               </div>
@@ -125,7 +124,8 @@ const Detectscam = () => {
                 </p>
               </div>
               <div className="footer-right">
-                <p className="footer-link">Privacy</p>
+                <p className="footer-link">About Us</p>
+                <p className="footer-link">Privacy Policy</p>
                 <p className="footer-link">Terms & Conditions</p>
             </div>
 		    </footer>
