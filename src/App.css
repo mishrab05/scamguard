@@ -1,3 +1,4 @@
+
 * {
 	margin: 0;
 	padding: 0;
@@ -15,13 +16,21 @@
 }
 
 .box-content {
-	display: flex;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 80%;
+  margin: auto;
+  padding-bottom: 0%;
+	/* display: flex;
 	justify-content: center;
 	align-items: center;
 	color: black;
 	max-width: 80%;
 	margin: auto;
 	height: 80%;
+  flex-direction: column; */
 }
 
 .firstHalf {
@@ -51,10 +60,73 @@
 /*homepage cards*/
 .card-container {
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   flex-wrap: wrap;
+  width: 100%;
+
   /*margin-bottom: 5rem;*/
 }
+
+.flex-container {
+  display: flex;
+  flex-direction: row; /* Ensure it's set to row to have items side by side */
+  justify-content: space-between; /* Adjusts the spacing between the items */
+  align-items: start; /* Aligns items to the top of the container */
+  width: 100%; /* Use the full available width */
+}
+
+.card-container, .input-area {
+  flex: 1; /* This will allow each section to take up equal space */
+  padding: 2px; /* Adds some padding inside each container for spacing */
+  box-sizing: border-box; /* Ensures padding is included in width calculation */
+}
+
+@media (max-width: 768px) {
+  .flex-container {
+      flex-direction: column;  
+  }
+}
+
+.check-button{
+    font-family: "Open Sans", sans-serif;
+    margin-right: 10px;
+    font-size: 16px;
+    letter-spacing: 2px;
+    text-decoration: none;
+    color: #000;
+    cursor: pointer;
+    border: 3px solid;
+    padding: 0.25em 0.5em;
+    box-shadow: 1px 1px 0px 0px, 2px 2px 0px 0px, 3px 3px 0px 0px, 4px 4px 0px 0px, 5px 5px 0px 0px;
+    position: relative;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+  }
+  
+  .check-button:active {
+    box-shadow: 0px 0px 0px 0px;
+    top: 5px;
+    left: 5px;
+  }
+  .check-button:hover{
+    background-color:#CBC3E3;
+  }
+  
+  @media (min-width: 768px) {
+    .check-button {
+      padding: 0.25em 0.75em;
+    }
+  }
+
+  .clear-Button{
+    margin-left: 10px;
+  }
+
+  .checkclear-container {
+    display: flex;
+    gap: 10px; /* Creates space between any child elements */
+  }
 
 .info-card {
   display: flex;
@@ -141,15 +213,18 @@
 	align-items: center;
 	justify-content: space-between;
   margin-top: 5rem;
-  margin-bottom: 5rem;
+  /* margin-bottom: 5rem; */
   text-align: center;
 }
 
 .centered-text {
+  font-family: "Open Sans", sans-serif;
   font-size: 28px;
   font-weight: 500;
-  color: #fff;
+  color: black;
   line-height: 2;
+  text-align: center;
+
   /*margin-bottom: 2rem;*/
 }
 
@@ -204,14 +279,70 @@
     background: rgba(94,45,145, 0.7);
 }
 
+@media (max-width: 768px) {
+  .button, .check-button, .clear-Button {
+      width: 100%; /* Full width buttons on smaller screens */
+      margin-bottom: 10px;
+  }
+}
+
 .result-section{
+  width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center; 
   justify-content: center; 
 }
 
-/* Result text*/
+
+
+.result-section1 {
+  font-family: "Open Sans", sans-serif;
+  width: 50%;
+  max-width: 90%; /* Limit maximum width to ensure it doesn't get too wide */
+  margin: 20px auto; /* Center it horizontally and add vertical spacing */
+  padding: 15px 20px;
+  font-size: 16px;
+  letter-spacing: 2px;
+  align-items: center; 
+  position: relative;
+  justify-content: center; 
+  text-decoration: none;
+  color: #000;
+  background-color: white;
+  border: 3px solid;
+  padding: 0.25em 0.5em;
+  box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.05); /* Single layer, more blur, lighter opacity */
+
+}
+
+@keyframes jump {
+  0%, 20%, 50%, 80%, 100% {
+      transform: translateY(0);
+  }
+  40% {
+      transform: translateY(-10px);
+  }
+  60% {
+      transform: translateY(-5px);
+  }
+}
+
+.jumping-icon {
+  display: inline-block;
+  animation: jump 1s infinite;
+}
+
+
+.search-results {
+  width: 80%; /* Adjusts the width of the results container */
+  padding: 10px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1); /* Optional: Adds subtle shadow for better visibility */
+  background: #fff; /* Optional: Sets a background color for contrast */
+  border-radius: 8px; /* Optional: Rounds the corners */
+}
+
+/* Result text
 .search-results {
   padding: 20px;
   background: #f9f9f9; 
@@ -222,7 +353,7 @@
   height: 60px;
   width: 300px;
   text-align: center;
-}
+} */
 
 .search-results:empty {
   display: none;
@@ -235,12 +366,138 @@
   margin: 20px 0;
 }
 
-.result-actions{
+/* .result-actions{
   padding-top: 30px;
+} */
+
+.result-actions{
+
+    width: 100%; /* Ensure the div takes the full width of its parent */
+    display: flex;
+    justify-content: space-between; /* Aligns children at both ends */
+    padding-top: 30px; /* Keeps existing top padding */
+    padding-bottom: 20px; /* Adds bottom padding to the container */
+  
+}
+
+.learn-more, .homeButton {
+  cursor: pointer;
+  font-weight: 700;
+  font-family: Helvetica, "sans-serif";
+  transition: all .2s;
+  padding: 10px 20px; /* Adjust padding if necessary */
+  border-radius: 100px;
+  background: white;
+  border: 1px solid;
+  display: flex;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  font-size: 15px;
+  margin: 10px 20px;
+  min-width: 120px; /* Ensure the button is not too narrow */
+  text-align: center;
+}
+.homeButton:first-child {
+  margin-left: 10px;
+  margin-right: 10px; /* Ensures space between buttons if next to each other */
+}
+.learn-more:last-child {
+  margin-right: 10px;
+}
+
+.learn-more:hover {
+  background: #c4e201; /* Fixed selector */
+}
+.homeButton:hover{
+  background : #CBC3E3;
+}
+
+.learn-more svg, .homeButton svg {
+  margin-right: 5px; /* Adjust this value to reduce the gap */
+  transition: transform .3s ease-in-out;
+}
+
+.learn-more:hover svg, .homeButton:hover svg {
+  transform: translateX(5px);
+}
+
+.learn-more:active, .homeButton:active {
+  transform: scale(0.95);
+}
+
+@media (max-width: 768px) {
+  .flex-container {
+      flex-direction: column;
+  }
+}
+
+@media (max-width: 768px) {
+  .centered-text {
+      font-size: 1.5rem; /* Smaller text on tablets */
+  }
+}
+
+@media (max-width: 480px) {
+  .centered-text {
+      font-size: 1.2rem; /* Even smaller on phones */
+  }
+}
+.disclaimer {
+  display: flex;
+  align-items: center;
+  font-family: Helvetica, "sans-serif";
+  font-size: 16px;
+  text-align: justify;
+  padding: 0.7em 1.4em; /* Uniform padding */
+  color: black;
+  background: white;
+  border: none;
+  font-weight: bold;
+  letter-spacing: 0.05em;
+  border-radius: 20em;
+  line-height: 1.5; /* Increased line spacing for better readability */
+}
+
+.disclaimer svg {
+  margin-right: 6px;
+}
+
+
+.disclaimer:active {
+  box-shadow: 0 0.3em 1em -0.5em black;
+}
+
+@media (max-width: 768px) {
+  .disclaimer {
+    font-size: 14px; /* Smaller font size on tablets and below */
+    padding: 10px 20px; /* Slightly smaller padding */
+  }
+}
+
+@media (max-width: 480px) {
+  .disclaimer {
+    font-size: 12px; /* Even smaller font size on mobile devices */
+    padding: 8px 15px; /* Reduced padding to fit smaller screens */
+  }
+}
+
+
+
+@media (max-width: 768px) {
+  .result-actions {
+      flex-direction: column;
+      align-items: center;
+  }
+
+  .homeButton, .learn-more {
+      width: 100%; /* Full width for easier access */
+      margin-bottom: 10px;
+  }
 }
 
 /*buttons*/
-.learn-more,.homeButton {
+/* .learn-more,.homeButton {
   padding: 12px 40px;
   font-size: 1rem; 
   border: none; 
@@ -253,11 +510,11 @@
   border: 2px solid transparent;
   margin-bottom: 20px;
   box-shadow: 0 2px 4px rgba(0,0,0,0.2);
-}
+} */
 
-.learn-more:hover, .homeButton:hover {
+/* .learn-more:hover, .homeButton:hover {
   text-decoration: underline;
-}
+} */
 
 /*media*/
 @media (max-width: 768px) {
@@ -499,4 +756,103 @@
   text-decoration: underline; 
 }
 
+.search-box textarea {
+  width: 100%; /* Ensures the textarea takes the full width of its container */
+  height: 300px; /* Adjust height to make the textarea larger */
+  font-size: 18px; /* Increases the font size for better readability */
+  background-color: white;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+  border-radius: 10px;
+  padding: 10px; /* Adds space inside the border, between the border and text */
+  box-sizing: border-box; /* Includes padding and border in the width and height */
+
+}
+.search-box textarea:focus {
+  border-color: black ;/* Darker blue for better focus visibility */
+  outline: none; /* Removes the default focus outline */
+  
+}
+
+.consent-popup {
+  position: absolute;
+  bottom: 100%; /* Position above the result section */
+  left: 50%;
+  transform: translateX(-50%);
+  width: 90%; /* Increased width to make the popup larger */
+  max-width: 600px; /* Set a maximum width to ensure it doesn't get too wide on large screens */
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px black;
+  text-align: justify; /* Justify the text inside the popup */
+  z-index: 50; /* High z-index to ensure visibility */
+}
+.consent-popup p {
+  margin-bottom: 20px; /* Add bottom margin to create space between text and buttons */
+}
+
+.button-68 {
+  appearance: none;
+  backface-visibility: hidden;
+  border-radius: 8px;
+  border-style: none;
+  box-shadow: rgba(0, 0, 0, 0.15) 0 4px 9px;
+  box-sizing: border-box;
+  color: #fff;
+  cursor: pointer;
+  display: inline-block;
+  font-family: Inter,-apple-system,system-ui,"Segoe UI",Helvetica,Arial,sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  letter-spacing: normal;
+  line-height: 1.5;
+  outline: none;
+  overflow: hidden;
+  padding: 10px 20px; /* Adjusted padding to reduce height */
+  position: relative;
+  text-align: center;
+  text-decoration: none;
+  transform: translate3d(0, 0, 0);
+  transition: all .3s;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  vertical-align: top;
+  white-space: nowrap;
+  margin-right: 10px; /* Adds space between buttons */
+}
+.button-68:last-child {
+  margin-right: 0; /* Remove margin from the last button (No button) */
+}
+/* Hover effects for both buttons */
+.button-68:hover {
+  opacity: 1;
+  transform: translateY(0);
+  transition-duration: .35s;
+}
+
+.button-68:active {
+  transform: translateY(2px);
+  transition-duration: .35s;
+}
+
+.button-yes {
+  background-color: #27ae60; /* Green background */
+  box-shadow: rgba(39, 174, 96, .15) 0 4px 9px;
+}
+
+.button-yes:hover {
+  background-color: #1e8449; /* Darker green on hover */
+  box-shadow: rgba(39, 174, 96, .2) 0 6px 12px;
+}
+
+.button-no {
+  background-color: #e74c3c; /* Red background */
+  box-shadow: rgba(231, 76, 60, .15) 0 4px 9px;
+}
+
+.button-no:hover {
+  background-color: #c0392b; /* Darker red on hover */
+  box-shadow: rgba(231, 76, 60, .2) 0 6px 12px;
+}
 
