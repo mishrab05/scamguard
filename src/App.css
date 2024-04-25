@@ -526,16 +526,33 @@
   text-align: left;
 }
 
+.question-text {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+  margin-top: 25px;
+}
+
+.explanation-text {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
+
 .quiz-section {
   display: flex;
   flex-direction: column;
   /*justify-content: center;*/
   align-items: center;
-  width: 800px;
+  width: 700px;
   height: 450px;
   border-radius: 20px;
-  margin: 20px auto; /* Center the box horizontally */
-  background-color: #fff;
+  margin: 50px auto; /* Center the box horizontally */
+  background-color: rgb(250, 250, 250);
 }
 
 .question-section {
@@ -569,13 +586,19 @@
   color: white;
 }
 
-.explanation-section{
+.explanation {
+  font-family: 'Plus Jakarta Sans';
+  font-size: 1.2rem;
+  line-height: 1.8rem;
+}
+
+.explanation-section {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
-.quiz-section .explanation-section button {
+.quiz-section button {
   margin-top: 10px;
   padding: 10px 20px;
   background-color: #5E2D91;
@@ -587,11 +610,66 @@
   transition: background-color 0.3s ease;
 }
 
-.quiz-section .explanation-section button:hover {
+.explanation-section button {
+  margin-top: 10px;
+  padding: 10px 20px;
+  background-color: #5E2D91;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
+}
+
+.quiz-end {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 10px;
+}
+
+.exit-button {
+  margin-top: 10px;
+  padding: 10px 20px;
+  background-color: #5E2D91;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
+}
+
+.exit-button:hover {
+  text-decoration: underline;
+}
+
+.quiz-section button:hover {
   /*background-color: #4a226a;*/
   text-decoration: underline;
 }
+
+.explanation-section button:hover {
+  /*background-color: #4a226a;*/
+  text-decoration: underline;
+}
+
+.quiz-text {
+  font-family: 'Plus Jakarta Sans';
+  font-size: 1.2rem;
+  line-height: 1.8rem;
+}
+
+.question-count {
+  font-family: 'Plus Jakarta Sans';
+  font-size: 1.6rem;
+  font-weight: bold;
+  color: #333;
+}
 /*end of quiz*/
+
+
 
 
 

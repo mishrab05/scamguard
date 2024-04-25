@@ -9,29 +9,29 @@ const questions = [
 {
     questionText: 'Question 1',
     answerOptions: [
-        { answerText: 'Scam', isCorrect: false },
-        { answerText: 'Not a scam', isCorrect: true },
+        { answerText: 'Scam', isCorrect: true },
+        { answerText: 'Not a scam', isCorrect: false },
         
     ],
-    explanation: 'Q1 explanation',
+    explanation: 'Explanation',
     },
     {
     questionText: 'Question 2',
     answerOptions: [
-        { answerText: 'Scam', isCorrect: false },
-        { answerText: 'Not a scam', isCorrect: true },
+        { answerText: 'Scam', isCorrect: true },
+        { answerText: 'Not a scam', isCorrect: false },
         
     ],
-    explanation: 'Q2 explanation',
+    explanation: 'Explanation',
     },
     {
     questionText: 'Question 3',
     answerOptions: [
-        { answerText: 'Scam', isCorrect: false },
-        { answerText: 'Not a scam', isCorrect: true },
+        { answerText: 'Scam', isCorrect: true },
+        { answerText: 'Not a scam', isCorrect: false },
         
     ],
-    explanation: 'Q3 explanation',
+    explanation: 'Explanation',
     }
 ];
   
@@ -100,7 +100,7 @@ function Quiz() {
         <section style={{
             background: 'linear-gradient(135deg, #B58DED33, #B58DED)',
             width: '100%',
-            height: '100vh',
+            height: '140vh',
         }}>
         <Navbar />
 
@@ -133,7 +133,7 @@ function Quiz() {
           </div>
         ) : (
 
-
+          <div>
           <div className='quiz-section'> 
             <div className="question-section">
               <div className="question-count">
@@ -141,23 +141,23 @@ function Quiz() {
               </div>
               {currentQuestionIndex === 0 && ( // Check if current question is Question 1
                 <div className="question-text">
-                  <p>You have received the message below from an unknown sender.</p>
-                  <p>Identify whether it is a scam message or not.</p>
+                  <p class='quiz-text'>You have received the message below from an unknown sender.</p>
+                  <p class='quiz-text'>Identify whether it is a scam message or not.</p>
                   <img src={require('../assets/Easlink.png')} alt="Message Image" />
                 </div>
               )}
               {currentQuestionIndex === 1 && ( // Check if current question is Question 2
                 <div className="question-text">
-                  <p>You have received the message below from an unknown sender.</p>
-                  <p>Identify whether it is a scam message or not.</p>
-                  <img src={require('../assets/Easlink.png')} alt="Message Image" />
+                  <p class='quiz-text'>You have received the message below from an unknown sender.</p>
+                  <p class='quiz-text'>Identify whether it is a scam message or not.</p>
+                  <img src={require('../assets/Shipping issue.png')} alt="Message Image" />
                 </div>
               )}
               {currentQuestionIndex === 2 && ( // Check if current question is Question 3
                 <div className="question-text">
-                  <p>You have received the message below from an unknown sender.</p>
-                  <p>Identify whether it is a scam message or not.</p>
-                  <img src={require('../assets/Easlink.png')} alt="Message Image" />
+                  <p class='quiz-text'>You have received the message below from an unknown sender.</p>
+                  <p class='quiz-text'>Identify whether it is a scam message or not.</p>
+                  <img src={require('../assets/Overdue notice.png')} alt="Message Image" />
                 </div>
               )}
               <div className="answer-section">
@@ -173,26 +173,28 @@ function Quiz() {
                 ))}
               </div>
             </div>
-
+            </div>
+   
+            <div className="explanation">   
             {showExplanation && (
               <div className="explanation-section">
                 <p>{questions[currentQuestionIndex].explanation}</p>
                 {currentQuestionIndex === 0 && ( // Check if current question is Question 1
-                  <div>
-                    <p>It is a scam message.</p>
-                    <p>Explanation for why it's a scam...</p>
+                  <div className='explanation-text'>
+                    <p class='quiz-text'>It is a scam message.</p>
+                    <p class='quiz-text'>Explanation for why it's a scam...</p>
                   </div>
                 )}
                 {currentQuestionIndex === 1 && ( // Check if current question is Question 2
-                  <div>
-                    <p>It is a scam message.</p>
-                    <p>Explanation for why it's a scam...</p>
+                  <div className='explanation-text'>
+                    <p class='quiz-text'>It is a scam message.</p>
+                    <p class='quiz-text'>Explanation for why it's a scam...</p>
                   </div>
                 )}
                 {currentQuestionIndex === 2 && ( // Check if current question is Question 3
-                  <div>
-                    <p>It is a scam message.</p>
-                    <p>Explanation for why it's a scam...</p>
+                  <div className='explanation-text'> 
+                    <p class='quiz-text'>It is a scam message.</p>
+                    <p class='quiz-text'>Explanation for why it's a scam...</p>
                   </div>
                 )}
                 <button onClick={currentQuestionIndex < questions.length - 1 ? handleNextQuestion : handleShowResults}>
@@ -201,11 +203,14 @@ function Quiz() {
               </div>
             )}
           </div> 
+          </div>
         )
       ) : null}
 
 
-
+          <div className='quiz-end'>
+              <Link to='/scamquiz' className='exit-button'>Exit quiz</Link>
+          </div>
       
           </section>
           <footer className="footer">
