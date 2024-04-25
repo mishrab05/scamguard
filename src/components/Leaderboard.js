@@ -1,7 +1,22 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import './LeaderboardStyles.css'; // Import your CSS file for styling
+import service from '../axios/service'; 
 
 const Leaderboard = () => {
+  const [leaders, setLeaders] = useState([]); // State to store the leaderboard data
+
+  useEffect(() => {
+    // Fetch data from your Flask API using a service wrapper around axios or similar library
+    service({
+      method: 'GET',
+      url: '/leaderboard_top5'
+    }).then(response => {
+      setLeaders(response.data); // Update the state with the fetched data
+    }).catch(error => {
+      console.error('Failed to fetch leaderboard data:', error);
+    });
+  }, []); // Empty dependency array means this effect runs once on mount
+
   return (
     <main>
       <div id="header">
@@ -11,44 +26,28 @@ const Leaderboard = () => {
         <div className="ribbon"></div>
         <table>
           <tbody>
-            <tr>
-              <td className="number">1</td>
-              <td className="name">Lee Taeyong</td>
-              <td className="points">
-                258.244{' '}
-                <img
-                  className="gold-medal"
-                  src="https://github.com/malunaridev/Challenges-iCodeThis/blob/master/4-leaderboard/assets/gold-medal.png?raw=true"
-                  alt="gold medal"
-                />
-              </td>
-            </tr>
-            <tr>
-              <td className="number">2</td>
-              <td className="name">Mark Lee</td>
-              <td className="points">258.242</td>
-            </tr>
-            <tr>
-              <td className="number">3</td>
-              <td className="name">Xiao Dejun</td>
-              <td className="points">258.223</td>
-            </tr>
-            <tr>
-              <td className="number">4</td>
-              <td className="name">Qian Kun</td>
-              <td className="points">258.212</td>
-            </tr>
-            <tr>
-              <td className="number">5</td>
-              <td className="name">Johnny Suh</td>
-              <td className="points">258.208</td>
-            </tr>
+            {leaders.map((leader, index) => (
+              <tr key={index}>
+                <td className="number">{index + 1}</td>
+                <td className="name">{leader.username}</td>
+                <td className="points">
+                  {leader.score}
+                  {index === 0 && (
+                    <img
+                      className="gold-medal"
+                      src="https://github.com/malunaridev/Challenges-iCodeThis/blob/master/4-leaderboard/assets/gold-medal.png?raw=true"
+                      alt="gold medal"
+                    />
+                  )}
+                </td>
+              </tr>
+            ))}
           </tbody>
         </table>
-
       </div>
     </main>
   );
 };
 
 export default Leaderboard;
+

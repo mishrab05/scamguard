@@ -13,6 +13,8 @@ from flask import Flask, request, jsonify
 from flask_cors import CORS
 from flask_sqlalchemy import SQLAlchemy
 from datetime import datetime
+from sqlalchemy import desc
+
 
 ##Enable CORS to allow  frontend to communicate with the backend
 app = Flask(__name__)
@@ -221,6 +223,12 @@ def score_submit():
         'top_scores': top_scores,
         'percentile_rank': percentile_rank
     }), 201
+
+@app.route('/leaderboard_top5', methods=['GET'])
+def get_top_scores():
+    top_five_scores = Score.query.order_by(desc(Score.score)).limit(5).all()
+    results = [{'username': score.username, 'score': score.score} for score in top_five_scores]
+    return jsonify(results)
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0',debug=True)
