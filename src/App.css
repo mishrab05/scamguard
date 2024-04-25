@@ -185,7 +185,9 @@
 }
 
 .searchButton:hover {  
-  background: rgba(94,45,145, 0.7);
+  /*background: rgba(94,45,145, 0.7);*/
+  background: #4a226a;
+  border: 1px solid #4a226a;
 }
 
 .clearButton {
@@ -201,7 +203,9 @@
 }
   
 .clearButton:hover {  
-    background: rgba(94,45,145, 0.7);
+    /*background: rgba(94,45,145, 0.7);*/
+    background: #4a226a;
+    border: 1px solid #4a226a;
 }
 
 .result-section{
