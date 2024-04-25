@@ -121,15 +121,19 @@ function Quiz() {
       ) : usernameSubmitted ? (
         showResults ? (
           <div className="score-section">
-            <p>Username: {username}</p>
-            <p>Your score: {score}</p>
-            <p>Your percentile rank is: {percentileRank ? `${percentileRank.toFixed(2)}%` : ''}</p>
-            <p>Top five scores:</p>
-            <ol>
-              {topScores.map((item, index) => (
-                <li key={index}>{item.username}: {item.score}</li>
-              ))}
-            </ol>
+            <p class='question-count'>Score board</p>
+            <div class='score-text'>
+                <p class='quiz-text'>Username: {username}</p>
+                <p class='quiz-text'>Points scored: {score}</p>
+                <p class='quiz-text'>Total points: 3</p>
+                <p class='quiz-text'>Your percentile rank is: {percentileRank ? `${percentileRank.toFixed(2)}%` : ''}</p>
+                <p class='quiz-text'>Top five scores:</p>
+                <ol>
+                  {topScores.map((item, index) => (
+                    <li key={index}>{item.username}: {item.score}</li>
+                  ))}
+                </ol>
+            </div>
           </div>
         ) : (
 

@@ -1,5 +1,6 @@
 import React from 'react'
 import Navbar from '../components/Navbar'; // Import Navbar component
+import Leaderboard from '../components/Leaderboard'; // Import the Leaderboard component
 import { Link } from 'react-router-dom'; // Import Link for navigation
 import Image from '../assets/background.png'; // Import image asset
 
@@ -41,13 +42,13 @@ const ScamQuiz = () => {
 
         </section>
 
-        {/* Background section with inline styles */}
+        {/* Background section with inline styles for Score board */}
         <section style={{
             background: 'ccc',
             width: '100%',
-            height: '70vh',
+            height: '120vh',
         }}>
-          Score board
+          <Leaderboard />
         </section>
 
         <footer className="footer">
