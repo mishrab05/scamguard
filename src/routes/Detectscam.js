@@ -1,4 +1,4 @@
-import React, { useState } from 'react'; // Import React and useState hook for managing state
+import React, { useState, useRef } from 'react'; // Import React and useState hook for managing state
 import { Link, useNavigate } from 'react-router-dom'; // Import Link and useNavigate from react-router-dom for navigation
 import '../App.css'; // Import CSS file for global styles
 import Navbar from '../components/Navbar'; // Import Navbar component
@@ -12,6 +12,7 @@ const Detectscam = () => {
   const [message, setMessage] = useState(''); // State for message input
   const [results, setResults] = useState(''); // State for prediction results
   const navigate = useNavigate(); // Navigate function for programmatic navigation
+  const resultsRef = useRef(null);
 
   // Function to handle search button click
   const handleSearch = async () => {
@@ -26,6 +27,7 @@ const Detectscam = () => {
         }
       });
       setResults(`Result : ${response.data.result}`); // Update results with prediction
+      resultsRef.current.scrollIntoView({ behavior: 'smooth' });
     } catch (error) {
       console.error('Error:', error); // Log error if request fails
       setResults('Error making prediction'); // Update results with error message
@@ -78,19 +80,26 @@ const Detectscam = () => {
 
               {/* Search box for entering message */}
               <div className="search-box">
-                <input type="text" id="messageInput" placeholder="Enter text message here." value={message} onChange={(e) => setMessage(e.target.value)} />
-              </div>
-              {/* Search and clear buttons */}
+              <textarea
+                id="messageInput"
+                placeholder="Enter text message here."
+                value={message}
+                onChange={(e) => setMessage(e.target.value)}
+                rows="10"  
+                style={{ resize: 'none', width: '100%' }}
+              />
+            </div>
+
               <div>
                 <button className="searchButton" onClick={handleSearch}>Submit</button>
-                <button className="clearButton" onClick={() => setMessage('')}>Clear</button>
+                <button className="clearButton" onClick={() => {setMessage('');setResults('');}}>Clear</button>
               </div>
             </div>
           </div>
         </section>
 
         {/* Section to display search results */}
-        <section className="result-section">
+        <section className="result-section" ref={resultsRef}>
             <h1 className="centered-text">
                 Result:
             </h1>
