@@ -28,6 +28,13 @@ const Navbar = () => {
 				<li>
 					<NavLink to='/helpsupport' activeClassName="active">Help & Support</NavLink>
 				</li>
+				{/* NavLink for ScamQuiz */}
+				<li>
+					<NavLink to='/scamquiz' activeClassName="active">Scam Quiz</NavLink>
+				</li>
+				<li>
+					<NavLink to='/scamtrends' activeClassName="active">Scam Trends</NavLink>
+				</li>
 			</ul>
 		</nav>
     </div>

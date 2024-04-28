@@ -3,6 +3,9 @@ import { Routes, Route } from 'react-router-dom'; // Import Routes and Route com
 import Home from './routes/Home'; // Import Home component from the 'routes' directory
 import HelpSupport from './routes/HelpSupport'; // Import HelpSupport component from the 'routes' directory
 import DetectScam from './routes/Detectscam'; // Import DetectScam component from the 'routes' directory
+import ScamQuiz from './routes/ScamQuiz'; // Import ScamQuiz component from the 'routes' directory
+import Quiz from './routes/Quiz';// Import Quiz component from the 'routes' directory
+import ScamTrends from './routes/ScamTrends';
 
 // Define the App component
 function App() {
@@ -14,6 +17,9 @@ function App() {
         <Route path='/' element={<Home />} /> {/* Render the Home component when the path is '/' */}
         <Route path='/helpsupport' element={<HelpSupport />} /> {/* Render the HelpSupport component when the path is '/helpsupport' */}
         <Route path='/detectscam' element={<DetectScam />} /> {/* Render the DetectScam component when the path is '/detectscam' */}
+        <Route path='/scamquiz' element={<ScamQuiz />} /> {/* Render the ScamQuiz component when the path is '/scamquiz' */}
+        <Route path='/quiz' element={<Quiz />} /> {/* Render the Quiz component when the path is '/quiz' */}
+        <Route path='/scamtrends' element={<ScamTrends />} />
       </Routes>
     </div>
   );

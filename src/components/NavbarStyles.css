@@ -34,7 +34,7 @@
 /* Styles for individual list items in the navigation links list */
 .nav-list li {
 	list-style: none; /* Remove default list styles */
-	padding: 26px 30px; /* Padding around each link */
+	padding: 26px 15px; /* Padding around each link */
 }
 
 /* Styles for anchor tags (links) in the navigation links list */
@@ -46,7 +46,8 @@
 
 /* Hover effect for anchor tags in the navigation links list */
 .nav-list li a:hover {
-    color: rgb(94, 45, 145, 0.8); /* Change text color on hover */
+    /*color: rgb(94, 45, 145, 0.8); /* Change text color on hover */
+	color: #4a226a;
 }
 
 /* Styles for the logo */
